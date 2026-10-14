@@ -48,12 +48,13 @@
   </ul>
 
   <h2>Data shared</h2>
-  <p>GoSocial has no server, no database, no analytics and no tracking. It does not collect, sell or share any user data with third parties. YouTube API data is sent only to YouTube.</p>
+  <p>GoSocial has no server, no database, no analytics and no tracking. It does not collect, sell or share any user data with third parties. YouTube API data is sent only to YouTube. Text you publish to Threads is sent only to Threads.</p>
 
   <h2>Revoking access and deleting data</h2>
   <ul>
     <li>You can revoke GoSocial's access to your Google account at any time from the Google security settings page: <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>.</li>
     <li>Signing out of YouTube in GoSocial deletes the stored tokens from the Keychain immediately.</li>
+    <li>Running <code>gosocial auth threads logout</code> deletes the Threads token from the Keychain. Threads access can also be removed in the Threads settings (Settings, Account, Website permissions / apps).</li>
     <li>When access is revoked from the Google security settings page, the stored tokens stop working and are deleted from the Keychain the next time GoSocial connects to YouTube.</li>
     <li>Because GoSocial stores no other data about you, there is nothing else to delete. You can also ask for deletion using the contact below.</li>
   </ul>
