@@ -48,6 +48,31 @@ li + li { margin-top: 6px; }
 .badge { margin: 0 0 8px; }
 .badge a { display: inline-block; }
 .badge img { display: block; width: 280px; height: auto; }
+.badge img.badge-on-light { display: none; }
+@media (prefers-color-scheme: light) {
+  .badge img.badge-on-dark { display: none; }
+  .badge img.badge-on-light { display: block; }
+}
 footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; gap: 18px; flex-wrap: wrap; }
 footer a { color: var(--muted); }
 code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; }
+
+/* Impression : thème clair forcé, espacements resserrés pour tenir sur une page */
+@media print {
+  :root {
+    --bg: oklch(1 0 0);
+    --surface: oklch(1 0 0);
+    --border: oklch(0.90 0.005 56);
+    --fg: oklch(0.22 0.006 56);
+    --muted: oklch(0.48 0.01 56);
+    --primary: oklch(0.58 0.15 60);
+    color-scheme: light;
+  }
+  .wrap { padding: 0 0 8px; }
+  header { margin-bottom: 24px; }
+  h2 { margin-top: 24px; }
+  .lead, .meta { margin-bottom: 20px; }
+  footer { margin-top: 28px; }
+  .badge img.badge-on-dark { display: none; }
+  .badge img.badge-on-light { display: block; width: 210px; }
+}
