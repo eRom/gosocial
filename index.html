@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoSocial</title>
+<meta name="description" content="GoSocial is a personal command-line tool that publishes the developer's own videos and posts to their own accounts. It uses YouTube API Services.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="./">Go<span>Social</span></a>
+    <nav>
+      <a href="./" aria-current="page">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </nav>
+  </header>
+
+  <h1>GoSocial</h1>
+  <p class="lead">A personal command-line tool that publishes my own content to my own accounts, from my own computer.</p>
+
+  <p class="badge"><b>Uses YouTube API Services</b></p>
+
+  <h2>What it does</h2>
+  <p>GoSocial is a single-user tool run locally on macOS by its developer, Romain Ecarnot. It is not offered to the public and has no other users.</p>
+  <ul>
+    <li>Uploads videos to my own YouTube channel.</li>
+    <li>Sets the title, description, tags, thumbnail, playlist and audience settings of those videos.</li>
+    <li>Reads my own channel information to confirm which channel is connected.</li>
+    <li>Prepares announcement posts for my other social accounts.</li>
+  </ul>
+
+  <h2>How it uses YouTube</h2>
+  <p>GoSocial accesses YouTube only through the official YouTube Data API, after I sign in with Google OAuth and grant access. It uses the following endpoints: <code>videos.insert</code>, <code>videos.update</code>, <code>thumbnails.set</code>, <code>playlistItems.insert</code> and <code>channels.list</code>.</p>
+  <p>The OAuth token is stored only in the macOS Keychain of my computer. There is no server, no database and no analytics. No YouTube data is sent to anyone other than YouTube itself.</p>
+
+  <div class="box">
+    <p>By using GoSocial, you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. GoSocial's handling of data is described in its <a href="privacy.html">Privacy Policy</a>, which references the <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a>.</p>
+  </div>
+
+  <footer>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>
+    <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a>
+  </footer>
+</div>
+</body>
+</html>
