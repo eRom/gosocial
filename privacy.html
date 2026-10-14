@@ -43,7 +43,7 @@
   <p>GoSocial also publishes text posts to the developer's own Threads account through the Threads API, using the <code>threads_basic</code> and <code>threads_content_publish</code> scopes and nothing else. It does not read feeds, replies or insights.</p>
   <ul>
     <li>The only items stored are the Threads app credentials and the access token, kept in the macOS Keychain of the developer's Mac. There is no server, no database and no analytics.</li>
-    <li>Running <code>gosocial auth threads logout</code> deletes the token from the Keychain. Access can also be removed in the Threads settings (Settings, Account, Website permissions / apps).</li>
+    <li>Running <code>gosocial auth threads logout</code> deletes the token from the Keychain. Access can also be removed in the Threads settings (Settings &gt; Account &gt; Website permissions).</li>
     <li>The page <code>threads-callback.html</code> only forwards the sign-in code to the local GoSocial process on <code>127.0.0.1</code> and stores nothing.</li>
   </ul>
 
@@ -54,7 +54,7 @@
   <ul>
     <li>You can revoke GoSocial's access to your Google account at any time from the Google security settings page: <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>.</li>
     <li>Signing out of YouTube in GoSocial deletes the stored tokens from the Keychain immediately.</li>
-    <li>Running <code>gosocial auth threads logout</code> deletes the Threads token from the Keychain. Threads access can also be removed in the Threads settings (Settings, Account, Website permissions / apps).</li>
+    <li>Running <code>gosocial auth threads logout</code> deletes the Threads token from the Keychain. Threads access can also be removed in the Threads settings (Settings &gt; Account &gt; Website permissions).</li>
     <li>When access is revoked from the Google security settings page, the stored tokens stop working and are deleted from the Keychain the next time GoSocial connects to YouTube.</li>
     <li>Because GoSocial stores no other data about you, there is nothing else to delete. You can also ask for deletion using the contact below.</li>
   </ul>
