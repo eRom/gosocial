@@ -44,8 +44,10 @@ ul { padding-left: 20px; }
 li + li { margin-top: 6px; }
 .box { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 16px 18px; margin: 24px 0; }
 .box p { margin: 0; }
-.badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 13px; color: var(--muted); }
-.badge b { color: var(--fg); font-weight: 600; }
+/* Badge officiel « Developed with YouTube » : l'asset inclut déjà sa zone de protection, rien ne doit le chevaucher. */
+.badge { margin: 0 0 8px; }
+.badge a { display: inline-block; }
+.badge img { display: block; width: 280px; height: auto; }
 footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; gap: 18px; flex-wrap: wrap; }
 footer a { color: var(--muted); }
 code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; }
