@@ -25,6 +25,9 @@
   <h2>YouTube Terms of Service</h2>
   <p>GoSocial uses YouTube API Services. By using GoSocial, you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>.</p>
 
+  <h2>Threads</h2>
+  <p>GoSocial also publishes text posts to the developer's own Threads account through the Threads API (scopes <code>threads_basic</code> and <code>threads_content_publish</code>), and nothing else: it does not read feeds, replies or insights. The only items stored are the Threads app credentials and the access token, kept in the macOS Keychain of the developer's Mac, with no server, no database and no analytics. Running <code>gosocial auth threads logout</code> deletes the token from the Keychain, and access can also be removed in the Threads settings (Settings, Account, Website permissions / apps). The page <code>threads-callback.html</code> only forwards the sign-in code to the local GoSocial process on <code>127.0.0.1</code> and stores nothing.</p>
+
   <h2>Privacy</h2>
   <p>Using GoSocial requires agreeing to the <a href="privacy.html">GoSocial Privacy Policy</a>, which references the <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a>.</p>
 

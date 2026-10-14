@@ -36,7 +36,15 @@
   <h2>Data stored</h2>
   <ul>
     <li>The OAuth access and refresh tokens, stored only in the macOS Keychain of the computer running GoSocial.</li>
-    <li>Nothing else. Video files and metadata stay in your local files and are sent directly from your computer to YouTube.</li>
+    <li>Nothing else, apart from the Threads items listed in the Threads section below. Video files and metadata stay in your local files and are sent directly from your computer to YouTube.</li>
+  </ul>
+
+  <h2>Use of the Threads API</h2>
+  <p>GoSocial also publishes text posts to the developer's own Threads account through the Threads API, using the <code>threads_basic</code> and <code>threads_content_publish</code> scopes and nothing else. It does not read feeds, replies or insights.</p>
+  <ul>
+    <li>The only items stored are the Threads app credentials and the access token, kept in the macOS Keychain of the developer's Mac. There is no server, no database and no analytics.</li>
+    <li>Running <code>gosocial auth threads logout</code> deletes the token from the Keychain. Access can also be removed in the Threads settings (Settings, Account, Website permissions / apps).</li>
+    <li>The page <code>threads-callback.html</code> only forwards the sign-in code to the local GoSocial process on <code>127.0.0.1</code> and stores nothing.</li>
   </ul>
 
   <h2>Data shared</h2>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>GoSocial - Threads</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>GoSocial</h1>
+    <p id="message">Connexion à Threads en cours…</p>
+  </main>
+  <script>
+    // Relais OAuth : renvoie code (ou refus) et state vers la CLI locale dont le port voyage dans le state
+    // (« <port>.<aléa> »). Rien n'est stocké ni envoyé ailleurs que vers 127.0.0.1.
+    // Le « #_ » que Meta ajoute est un fragment : il n'apparaît jamais dans location.search.
+    function relayTarget(search) {
+      const params = new URLSearchParams(search);
+      const state = params.get("state") || "";
+      const match = /^(\d{4,5})\./.exec(state);
+      const port = match ? Number(match[1]) : 0;
+      if (port < 1024 || port > 65535) return null;
+      const code = params.get("code");
+      const error = params.get("error");
+      if (code) return "http://127.0.0.1:" + port + "/?" + new URLSearchParams({ code: code, state: state });
+      if (error) return "http://127.0.0.1:" + port + "/?" + new URLSearchParams({ error: error, state: state });
+      return null;
+    }
+    const target = relayTarget(location.search);
+    if (target) {
+      history.replaceState(null, "", location.pathname);
+      location.replace(target);
+    } else {
+      document.getElementById("message").textContent = "Lien de connexion invalide.";
+    }
+  </script>
+</body>
+</html>
