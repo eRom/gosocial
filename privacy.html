@@ -36,7 +36,7 @@
   <h2>Data stored</h2>
   <ul>
     <li>The OAuth access and refresh tokens, stored only in the macOS Keychain of the computer running GoSocial.</li>
-    <li>Nothing else, apart from the Threads items listed in the Threads section below. Video files and metadata stay in your local files and are sent directly from your computer to YouTube.</li>
+    <li>Nothing else, apart from the Threads and LinkedIn items listed in the sections below. Video files and metadata stay in your local files and are sent directly from your computer to YouTube.</li>
   </ul>
 
   <h2>Use of the Threads API</h2>
@@ -47,14 +47,24 @@
     <li>The page <code>threads-callback.html</code> only forwards the sign-in code to the local GoSocial process on <code>127.0.0.1</code> and stores nothing.</li>
   </ul>
 
+  <h2>Use of the LinkedIn API</h2>
+  <p>GoSocial also publishes text posts, and a first comment on each post, to the connected LinkedIn member's own profile through the LinkedIn API, using the <code>openid</code>, <code>profile</code> and <code>w_member_social</code> scopes and nothing else. It does not read feeds, connections, messages or analytics.</p>
+  <ul>
+    <li>The only items stored, in the macOS Keychain of the developer's Mac and nowhere else, are the app credentials (client ID and secret), the access token, its expiry date, the member identifier (<code>urn:li:person</code>) and the display name. There is no server, no database and no analytics.</li>
+    <li>Only the posts and first comments requested by a publication batch are published, on the profile of the connected member.</li>
+    <li>Running <code>gosocial auth linkedin logout</code> revokes the token and deletes it from the Keychain. Access can also be removed in the LinkedIn settings (Settings &gt; Data privacy &gt; Permitted services).</li>
+    <li>The page <code>linkedin-callback.html</code> only forwards the sign-in code to the local GoSocial process on <code>127.0.0.1</code> and stores nothing.</li>
+  </ul>
+
   <h2>Data shared</h2>
-  <p>GoSocial has no server, no database, no analytics and no tracking. It does not collect, sell or share any user data with third parties. YouTube API data is sent only to YouTube. Text you publish to Threads is sent only to Threads.</p>
+  <p>GoSocial has no server, no database, no analytics and no tracking. It does not collect, sell or share any user data with third parties. YouTube API data is sent only to YouTube. Text you publish to Threads is sent only to Threads. Text you publish to LinkedIn is sent only to LinkedIn.</p>
 
   <h2>Revoking access and deleting data</h2>
   <ul>
     <li>You can revoke GoSocial's access to your Google account at any time from the Google security settings page: <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>.</li>
     <li>Signing out of YouTube in GoSocial deletes the stored tokens from the Keychain immediately.</li>
     <li>Running <code>gosocial auth threads logout</code> deletes the Threads token from the Keychain. Threads access can also be removed in the Threads settings (Settings &gt; Account &gt; Website permissions).</li>
+    <li>Running <code>gosocial auth linkedin logout</code> revokes the LinkedIn token and deletes it from the Keychain. LinkedIn access can also be removed in the LinkedIn settings (Settings &gt; Data privacy &gt; Permitted services).</li>
     <li>When access is revoked from the Google security settings page, the stored tokens stop working and are deleted from the Keychain the next time GoSocial connects to YouTube.</li>
     <li>Because GoSocial stores no other data about you, there is nothing else to delete. You can also ask for deletion using the contact below.</li>
   </ul>
